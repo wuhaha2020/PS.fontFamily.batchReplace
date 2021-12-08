@@ -9,7 +9,7 @@
 - Win 64bit：C:\Program Files (x86)\Common Files\Adobe\CEP\extensions\
 
 ### 插件界面
-<img src="ui.png">
+<img src="http://visa.ithanhua.cn/images/ui.png">
 
 ### 使用方法
 1. 选择需要替换的目标字体图层
