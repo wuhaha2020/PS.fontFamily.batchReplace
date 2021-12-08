@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="UTF-8">
+		<script type="text/javascript" src="./js/CSInterface.js"></script>
+		<style>
+			body{
+				background-color: #454545;
+				width: 200px;
+				height: 105px;
+				color: #dddddd;
+				font-size: 12px;
+			}
+			.fonts .row {
+				padding: 5px;
+				border-bottom: 1px solid #383838;
+			}
+			.fonts .row:after {
+				display: table;
+				content: '';
+				clear: both;
+			}
+			.fonts label {
+				width: 50px;
+				float: left;
+				line-height: 24px;
+			}
+			.fonts input {
+				margin: 0;
+				width: 90px;
+				float: left;
+				line-height: 22px;
+				font-size: 12px;
+				border: 1px solid #383838;
+				border-right: none;
+				border-top-left-radius: 4px;
+				border-bottom-left-radius: 4px;
+				padding: 0 5px;
+				outline: none;
+			}
+			.fonts button {
+				width: 50px;
+				float: left;
+				margin: 0;
+				line-height: 22px;
+				border: 1px solid #383838;
+				font-size: 12px;
+				border-top-right-radius: 4px;
+				border-bottom-right-radius: 4px;
+				cursor: pointer;
+				outline: none;
+				padding: 0 5px;
+			}
+			.fonts .run {
+				border-radius: 4px;
+				width: 100%;
+				cursor: pointer;
+				outline: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="fonts">
+			<div class="row">
+				<label>目标：</label>
+				<input id="target" value="" />
+				<button onclick="getFontName('target')">捕获</button>
+			</div>
+			<div class="row">
+				<label>替换为：</label>
+				<input id="replace" value="" />
+				<button onclick="getFontName('replace')">捕获</button>
+			</div>
+			<div class="row">
+				<input class="run" type="button" value="全部替换" onclick="start()">
+			</div>
+		</div>
+	</body>
+	<script>
+		var menuXML = '<Menu><MenuItem Id="version" Label="Version: 1.0.0" Enabled="false" Checked="false"/><MenuItem Label="Author: wuhaha2020" Enabled="false" Checked="false"/><MenuItem Label="Thanks: nullice" Enabled="false" Checked="false"/><MenuItem Label="At: 2021/12/07" Enabled="false" Checked="false"/></Menu>'
+		var cs = new CSInterface();
+		if (window.__adobe_cep__.invokeSync != null) {
+		  cs.setPanelFlyoutMenu(menuXML)
+		}
+		//刷新字体列表
+		cs.evalScript('getFontList()');
+		//获取字体名
+		var getFontName = function(type){
+			cs.evalScript('getFontName("'+type+'")', function (result)
+        {
+					if(result!=='false'){
+						document.getElementById(type).value = result
+					}
+				}
+			);
+		}
+		//批量替换
+		var start = function() {
+			if(document.getElementById("target").value!==''&&document.getElementById("replace").value!==''){
+				cs.evalScript('start()');
+			}else{
+				alert('请先捕获字体！')
+			}
+		}
+	</script>
+</html>

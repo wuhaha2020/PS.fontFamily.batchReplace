@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ExtensionBundleId="PS.fontFamily.batchReplace" ExtensionBundleVersion="1.0" Version="6.0"> <!-- MAJOR-VERSION-UPDATE-MARKER -->
+    <ExtensionList>
+        <Extension Id="PS.fontFamily.batchReplace" Version="1.0"/> <!-- 设置扩展 ID-->
+    </ExtensionList>
+
+    <ExecutionEnvironment>
+        <HostList> <!-- 设置扩展能在 11.0 版本之后 PhotoShop 中运行-->
+            <Host Name="PHXS" Version="[11.0,99.9]"/>
+            <Host Name="PHSP" Version="[11.0,99.9]"/>
+        </HostList>
+
+        <LocaleList>
+            <Locale Code="All"/>
+        </LocaleList>
+
+        <RequiredRuntimeList>
+            <RequiredRuntime Name="CSXS" Version="6.0"/> 
+        </RequiredRuntimeList>
+
+    </ExecutionEnvironment>
+    <DispatchInfoList>
+        <Extension Id="PS.fontFamily.batchReplace"> <!-- 为 PS.fontFamily.batchReplace 设置属性-->
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./index.html</MainPath> <!-- 指定起始载入的网页-->
+										<CEFCommandLine>
+											<Parameter>--allow-file-access-from-files</Parameter>
+											<Parameter>--allow-file-access</Parameter>
+											<Parameter>--enable-nodejs</Parameter>
+										    <Parameter>--mixed-context</Parameter>
+										</CEFCommandLine>
+                    <ScriptPath>./jsx/main.jsx</ScriptPath> <!-- 指定用到的 JSX 文件-->
+                </Resources>
+
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible> <!-- 设置扩展面板为可视-->
+                    <StartOn>
+                    </StartOn>
+                </Lifecycle>
+
+                <UI>
+                    <Type>Panel</Type> <!-- 设置扩展显示为面板模式-->
+                    <Menu>字体批量替换</Menu> <!-- 设置扩展标题-->
+                    <Geometry>
+                        <Size>  <!-- 设置扩展面板尺寸-->
+                            <Height>125</Height>
+                            <Width>220</Width>
+                        </Size>
+                        <MaxSize>
+                           <Height>125</Height>
+                           <Width>220</Width>
+                        </MaxSize>
+                        <MinSize>
+                            <Height>125</Height>
+                            <Width>220</Width>
+                        </MinSize>
+                    </Geometry>
+                    <Icons>  <!-- 设置扩展面板尺寸-->
+                        <Icon Type="Normal">./img/icon1.png</Icon>
+                        <Icon Type="DarkNormal">./img/icon1.png</Icon>
+                    </Icons>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+
+				
+				
+    </DispatchInfoList>
+		<Author>https://github.com/wuhaha2020</Author> <!-- 作者信息-->
+		<Abstract>字体批量替换小插件!</Abstract> <!-- 扩展描述-->
+</ExtensionManifest>
