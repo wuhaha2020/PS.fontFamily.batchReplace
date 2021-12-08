@@ -3,8 +3,8 @@
 - 一键将PSD内的所有目标字体 替换为指定字体
 
 ### 安装方法
-- 下载<a href="https://github.com/wuhaha2020/PS.fontFamily.batchReplace/blob/main/fontFamilyBatchReplaceSetup.zip" download="ps字体批量替换插件.zip">安装文件</a>-执行安装文件
-- 
+- 下载<a href="https://github.com/wuhaha2020/PS.fontFamily.batchReplace/blob/main/fontFamilyBatchReplaceSetup.zip" download="ps字体批量替换插件.zip">安装文件（右键 链接另存为）</a>-执行安装文件
+
 ### 插件开启方法
 - 点击photoshop顶部 - 窗口 - 扩展插件 - 字体批量替换
 
