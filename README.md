@@ -4,9 +4,6 @@
 
 ### 安装方法
 - 下载<a href="https://github.com/wuhaha2020/PS.fontFamily.batchReplace/blob/main/fontFamilyBatchReplaceSetup.zip" download="ps字体批量替换插件.zip">安装文件</a>-执行安装文件
-- 或将插件文件夹复制到以下目录内
-- Win 32bit：C:\Program Files\Common Files\Adobe\CEP\extensions\
-- Win 64bit：C:\Program Files (x86)\Common Files\Adobe\CEP\extensions\
 - 
 ### 插件开启方法
 - 点击photoshop顶部 - 窗口 - 扩展插件 - 字体批量替换
